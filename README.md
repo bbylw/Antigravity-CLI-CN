@@ -1,6 +1,6 @@
-# Gemini-CLI 终极教程网站
+# Antigravity CLI 终极教程网站
 
-一个现代、美观的静态网站，展示 Gemini-CLI 的完整使用教程，从入门到精通。
+一个现代、美观的静态网站，展示 Antigravity CLI 的完整使用教程，从入门到精通。
 
 ## 特性
 
@@ -25,7 +25,7 @@ ge/
 ├── index.html          # 主页面
 ├── styles.css          # 样式文件
 ├── script.js           # 交互脚本
-├── gemini.md          # 原始教程文档
+├── antigravity.md          # 原始教程文档
 └── README.md          # 项目说明
 ```
 
@@ -63,10 +63,10 @@ npx serve .
 # 初始化仓库
 git init
 git add .
-git commit -m "Initial commit: Gemini-CLI tutorial website"
+git commit -m "Initial commit: Antigravity CLI tutorial website"
 
 # 添加远程仓库（替换为你的仓库地址）
-git remote add origin https://github.com/yourusername/gemini-cli-tutorial.git
+git remote add origin https://github.com/yourusername/antigravity-cli-tutorial.git
 
 # 推送到GitHub
 git branch -M main
@@ -91,10 +91,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
@@ -165,4 +165,4 @@ MIT License
 
 ---
 
-Made with ❤️ for the Gemini-CLI community
+Made with ❤️ for the Antigravity CLI community
