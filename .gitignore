@@ -1,9 +1,10 @@
 # 工具内部文档（非网站交付物）
 .trae/
 
-# 验证产物（可由 verify.js 重新生成）
+# 验证产物
 screenshots/
 debug.log
+verify.js
 
 # 系统文件
 .DS_Store
