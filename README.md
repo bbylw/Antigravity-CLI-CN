@@ -1,51 +1,77 @@
-# Antigravity CLI 中文指南
+# Antigravity CLI
 
-这是一个基于 [`google-antigravity/antigravity-cli` 官方 README](https://github.com/google-antigravity/antigravity-cli/blob/main/README.md) 重构的中文静态网站。项目不再定位为泛化“终极教程”，而是聚焦官方 README 中实际公开的信息：产品定位、CLI 与 Antigravity 2.0 的差异、生态集成、安装方式、认证流程，以及安全与隐私提示。
+Antigravity CLI understands your codebase, makes edits with your permission, and executes commands — right from your terminal.
 
-## 重构重点
+- **Official Docs**: [antigravity.google/docs/cli-overview](https://antigravity.google/docs/cli-overview)
+- **Official Website**: [antigravity.google/product/antigravity-cli](https://antigravity.google/product/antigravity-cli)
 
-- **内容对齐官方 README**：所有核心段落、表格、安装命令和安全提示均按官方 README 重新组织为中文页面。
-- **页面结构重做**：使用单页落地页结构，包括 Hero、官方资源入口、能力概览、对比表、集成、安装、认证、安全与隐私等区块。
-- **视觉系统更新**：改为深色玻璃拟态界面，突出终端产品属性，并保留移动端响应式导航。
-- **脚本精简**：删除旧版重复初始化、无对应 DOM 的 FAQ/粒子逻辑和调试输出，仅保留导航、复制命令、当前章节高亮。
-- **文档同步**：`antigravity.md` 提供与页面一致的中文 Markdown 摘要，便于独立阅读和维护。
+![Antigravity CLI Demo](agy-cli-demo.gif)
 
-## 项目结构
+---
 
-```text
-.
-├── index.html       # 中文静态页面
-├── styles.css       # 页面样式
-├── script.js        # 轻量交互脚本
-├── antigravity.md   # 官方 README 中文摘要
-├── CNAME            # GitHub Pages 自定义域名配置
-└── README.md        # 项目说明
-```
+Antigravity CLI brings the core capabilities of Antigravity 2.0 (multi-step reasoning, multi-file editing, tool calling, and persistent history) directly to your terminal. It is optimized for keyboard-driven workflows and remote SSH sessions with minimal resource overhead.
 
-## 本地预览
+---
 
-项目是纯静态站点，可直接打开 `index.html`，也可以启动本地 HTTP 服务：
+## Features at a Glance
 
+| Feature | Antigravity CLI | Antigravity 2.0 |
+| :--- | :--- | :--- |
+| **Primary Focus** | Speed, keyboard efficiency, low overhead | Comprehensiveness, visual orchestration, project management |
+| **Interface** | Terminal User Interface (TUI) | Full Rich GUI Application |
+| **Workflows** | SSH/Remote sessions, keyboard-first | Local workspaces, heavy orchestration |
+| **Agent Engine** | Shared Core Agent Engine | Shared Core Agent Engine |
+
+---
+
+## Integration
+
+- **Shared Agent Engine**: Both interfaces run on the same core agent engine. Improvements automatically apply to both.
+- **Shared Settings**: Preferences and permissions sync bidirectionally.
+- **Session Export**: Export terminal sessions to the Antigravity 2.0 GUI to continue working.
+
+---
+
+## Installation
+
+### macOS / Linux
 ```bash
-python3 -m http.server 8000
+curl -fsSL https://antigravity.google/cli/install.sh | bash
 ```
 
-然后访问：
-
-```text
-http://localhost:8000
+### Windows PowerShell
+```powershell
+irm https://antigravity.google/cli/install.ps1 | iex
 ```
 
-## 部署
+### Windows CMD
+```cmd
+curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
 
-将仓库根目录发布到 GitHub Pages、Cloudflare Pages、Netlify 或任意静态托管服务即可。
+---
 
-## 官方资源
+## Authentication
 
-- 官方文档：<https://antigravity.google/docs/cli-overview>
-- 官方网站：<https://antigravity.google/product/antigravity-cli>
-- 官方 GitHub：<https://github.com/google-antigravity/antigravity-cli>
+The CLI authenticates via the system keyring, falling back to Google Sign-In if no active session exists.
 
-## 许可证
+- **Local**: Automatically opens your default browser.
+- **Remote / SSH**: Detects SSH sessions and prints an authorization URL to complete login locally.
+- **Sign Out**: Run `/logout` to clear saved credentials.
 
-本项目沿用仓库现有许可证。
+> [!NOTE]
+> For enterprise access, connect your GCP project during onboarding. See the Enterprise page for details.
+
+---
+
+## Terms of Service & Data Use
+
+> [!WARNING]
+> AI coding agents are known to have certain security risks, including autonomous code execution, data exfiltration, prompt injection, and supply chain risks. Ensure that you monitor and verify all actions taken by the agent.
+
+By using Antigravity CLI, you agree to help improve the product by allowing Google to collect and use your Interactions data, subject to the Google Terms of Service and Google Privacy Policy. You can choose to opt out at any time via your settings.
+
+### Legal & Privacy Links
+
+- **Terms of Service**: [antigravity.google/terms](https://antigravity.google/terms)
+- **Privacy Policy**: [policies.google.com/privacy](https://policies.google.com/privacy)
