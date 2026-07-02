@@ -22,23 +22,23 @@ document.addEventListener('DOMContentLoaded', function () {
 // 导航功能初始化
 function initializeNavigation() {
     const navToggle = document.getElementById('navToggle');
-    const sidebar = document.getElementById('sidebar');
+    const navMenu = document.querySelector('.nav-menu');
     const mainContent = document.querySelector('.main-content');
 
     // 移动端导航切换
-    if (navToggle) {
+    if (navToggle && navMenu) {
         navToggle.addEventListener('click', function () {
-            sidebar.classList.toggle('open');
+            navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
         });
     }
 
-    // 点击主内容区域关闭侧边栏（移动端）
+    // 点击主内容区域关闭导航（移动端）
     if (mainContent) {
         mainContent.addEventListener('click', function () {
-            if (window.innerWidth <= 768) {
-                sidebar.classList.remove('open');
-                navToggle.classList.remove('active');
+            if (window.innerWidth <= 992) {
+                if (navMenu) navMenu.classList.remove('active');
+                if (navToggle) navToggle.classList.remove('active');
             }
         });
     }
@@ -68,12 +68,13 @@ function initializeSmoothScrolling() {
                     behavior: 'smooth'
                 });
 
-                // 关闭移动端侧边栏
-                if (window.innerWidth <= 768) {
-                    document.getElementById('sidebar').classList.remove('open');
-                    document.getElementById('navToggle').classList.remove('active');
+                // 关闭移动端导航
+                if (window.innerWidth <= 992) {
+                    const navMenu = document.querySelector(".nav-menu");
+                    const navToggle = document.getElementById("navToggle");
+                    if (navMenu) navMenu.classList.remove("active");
+                    if (navToggle) navToggle.classList.remove("active");
                 }
-            }
         });
     });
 }
@@ -291,11 +292,13 @@ function initializeActiveSection() {
 
 // 窗口大小变化处理
 window.addEventListener('resize', function () {
-    const sidebar = document.getElementById('sidebar');
+    const navMenu = document.querySelector('.nav-menu');
     const navToggle = document.getElementById('navToggle');
 
-    if (window.innerWidth > 768) {
-        sidebar.classList.remove('open');
+    if (window.innerWidth > 992) {
+        if (navMenu) {
+            navMenu.classList.remove('active');
+        }
         if (navToggle) {
             navToggle.classList.remove('active');
         }
