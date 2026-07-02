@@ -1,77 +1,81 @@
-# Antigravity CLI
+# Antigravity CLI 中文摘要
 
-Antigravity CLI understands your codebase, makes edits with your permission, and executes commands — right from your terminal.
+Antigravity CLI 可以理解你的代码库，在获得许可后进行编辑，并直接从终端执行命令。
 
-- **Official Docs**: [antigravity.google/docs/cli-overview](https://antigravity.google/docs/cli-overview)
-- **Official Website**: [antigravity.google/product/antigravity-cli](https://antigravity.google/product/antigravity-cli)
-
-![Antigravity CLI Demo](agy-cli-demo.gif)
-
----
-
-Antigravity CLI brings the core capabilities of Antigravity 2.0 (multi-step reasoning, multi-file editing, tool calling, and persistent history) directly to your terminal. It is optimized for keyboard-driven workflows and remote SSH sessions with minimal resource overhead.
+- **官方文档**：<https://antigravity.google/docs/cli-overview>
+- **官方网站**：<https://antigravity.google/product/antigravity-cli>
+- **官方 GitHub**：<https://github.com/google-antigravity/antigravity-cli>
 
 ---
 
-## Features at a Glance
+## 产品定位
 
-| Feature | Antigravity CLI | Antigravity 2.0 |
+Antigravity CLI 将 Antigravity 2.0 的核心能力带到终端，包括多步骤推理、多文件编辑、工具调用和持久历史。它针对键盘驱动工作流、远程 SSH 会话和低资源开销进行了优化。
+
+---
+
+## 特性概览
+
+| 维度 | Antigravity CLI | Antigravity 2.0 |
 | :--- | :--- | :--- |
-| **Primary Focus** | Speed, keyboard efficiency, low overhead | Comprehensiveness, visual orchestration, project management |
-| **Interface** | Terminal User Interface (TUI) | Full Rich GUI Application |
-| **Workflows** | SSH/Remote sessions, keyboard-first | Local workspaces, heavy orchestration |
-| **Agent Engine** | Shared Core Agent Engine | Shared Core Agent Engine |
+| 主要关注点 | 速度、键盘效率、低开销 | 全面性、可视化编排、项目管理 |
+| 界面 | 终端用户界面（TUI） | 完整富 GUI 应用 |
+| 工作流 | SSH/远程会话、键盘优先 | 本地工作区、重度编排 |
+| 代理引擎 | 共享核心代理引擎 | 共享核心代理引擎 |
 
 ---
 
-## Integration
+## 集成
 
-- **Shared Agent Engine**: Both interfaces run on the same core agent engine. Improvements automatically apply to both.
-- **Shared Settings**: Preferences and permissions sync bidirectionally.
-- **Session Export**: Export terminal sessions to the Antigravity 2.0 GUI to continue working.
+- **共享代理引擎**：CLI 与 GUI 运行在同一个核心代理引擎上，改进会自动应用到两端。
+- **共享设置**：偏好设置和权限可以双向同步。
+- **会话导出**：可将终端会话导出到 Antigravity 2.0 GUI 中继续工作。
 
 ---
 
-## Installation
+## 安装
 
 ### macOS / Linux
+
 ```bash
 curl -fsSL https://antigravity.google/cli/install.sh | bash
 ```
 
 ### Windows PowerShell
+
 ```powershell
 irm https://antigravity.google/cli/install.ps1 | iex
 ```
 
 ### Windows CMD
+
 ```cmd
 curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
 ---
 
-## Authentication
+## 认证
 
-The CLI authenticates via the system keyring, falling back to Google Sign-In if no active session exists.
+CLI 优先通过系统密钥环认证；如果没有活动会话，则回退到 Google Sign-In。
 
-- **Local**: Automatically opens your default browser.
-- **Remote / SSH**: Detects SSH sessions and prints an authorization URL to complete login locally.
-- **Sign Out**: Run `/logout` to clear saved credentials.
+- **本地**：自动打开默认浏览器。
+- **远程 / SSH**：检测 SSH 会话并打印授权 URL，便于在本地完成登录。
+- **注销**：运行 `/logout` 清除保存的凭据。
 
 > [!NOTE]
-> For enterprise access, connect your GCP project during onboarding. See the Enterprise page for details.
+> 企业访问需要在引导流程中连接 GCP 项目。更多信息请参考企业页面。
 
 ---
 
-## Terms of Service & Data Use
+## 服务条款与数据使用
 
 > [!WARNING]
-> AI coding agents are known to have certain security risks, including autonomous code execution, data exfiltration, prompt injection, and supply chain risks. Ensure that you monitor and verify all actions taken by the agent.
+> AI 编码代理存在自主代码执行、数据泄露、提示词注入和供应链等安全风险。请监控并验证代理采取的所有操作。
 
-By using Antigravity CLI, you agree to help improve the product by allowing Google to collect and use your Interactions data, subject to the Google Terms of Service and Google Privacy Policy. You can choose to opt out at any time via your settings.
+使用 Antigravity CLI 即表示你同意根据 Google 服务条款和 Google 隐私政策，允许 Google 收集和使用交互数据以改进产品。你可以随时通过设置选择退出。
 
-### Legal & Privacy Links
+### 法律与隐私链接
 
-- **Terms of Service**: [antigravity.google/terms](https://antigravity.google/terms)
-- **Privacy Policy**: [policies.google.com/privacy](https://policies.google.com/privacy)
+- **服务条款**：<https://antigravity.google/terms>
+- **隐私政策**：<https://policies.google.com/privacy>

@@ -1,264 +1,144 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antigravity CLI 终极教程 | 从入门到精通</title>
-    <meta name="description" content="完整的Antigravity CLI使用教程，从安装配置到高级技巧，助您快速掌握AI编程助手">
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antigravity CLI 中文指南</title>
+  <meta name="description" content="基于官方 README 重构的 Antigravity CLI 中文介绍、安装、认证、安全与隐私指南。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪐</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-    <!-- 导航栏 -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="brand-icon">🤖</span>
-                <span class="brand-text">Antigravity CLI 教程</span>
-            </div>
-            <div class="nav-menu">
-                <a href="#features" class="nav-link">概览</a>
-                <a href="#integration" class="nav-link">集成</a>
-                <a href="#installation" class="nav-link">安装</a>
-                <a href="#authentication" class="nav-link">认证</a>
-                <a href="#terms" class="nav-link">条款</a>
-            </div>
-            <div class="nav-toggle" id="navToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand-mark">🪐</span>
+      <span>Antigravity CLI</span>
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+      <span></span><span></span><span></span>
+      <span class="sr-only">打开导航</span>
+    </button>
+    <nav class="site-nav" id="site-nav" data-nav>
+      <a href="#overview">概览</a>
+      <a href="#compare">能力对比</a>
+      <a href="#integration">集成</a>
+      <a href="#install">安装</a>
+      <a href="#auth">认证</a>
+      <a href="#security">安全与隐私</a>
     </nav>
+  </header>
 
-
-    <!-- 主内容区域 -->
-    <main class="main-content">
-        <!-- 英雄区域 -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">Antigravity CLI 终极教程</span>
-                    <span class="subtitle">从入门到精通</span>
-                </h1>
-                <p class="hero-description">
-                    掌握强大的AI编程助手，提升开发效率，释放编程潜力
-                </p>
-                <div class="hero-actions">
-                    <a href="#installation" class="btn btn-primary">开始学习</a>
-                    <a href="https://github.com/google-antigravity/antigravity-cli" class="btn btn-secondary" target="_blank">
-                        <span>GitHub</span>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M7 17L17 7M17 7H7M17 7V17" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="terminal-demo">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <span class="btn-close"></span>
-                            <span class="btn-minimize"></span>
-                            <span class="btn-maximize"></span>
-                        </div>
-                        <div class="terminal-title">Antigravity CLI</div>
-                    </div>
-                    <div class="terminal-body">
-                        <div class="terminal-line">
-                            <span class="prompt">$</span>
-                            <span class="command">antigravity</span>
-                        </div>
-                        <div class="terminal-line output">
-                            <span class="typing-text">欢迎使用 Antigravity CLI！您的代码库助手已准备就绪。</span>
-                        </div>
-                        <div class="terminal-line">
-                            <span class="prompt">></span>
-                            <span class="cursor">|</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 特性卡片 -->
-                <section class="features">
-            <div class="container">
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🚀</div>
-                        <h3>终端原生</h3>
-                        <p>直接在您熟悉的终端环境中使用，无需切换窗口，保持专注。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🧠</div>
-                        <h3>深度上下文</h3>
-                        <p>通过 @ 命令和 AGENTS.md 文件深度理解您的项目结构和编码标准。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔧</div>
-                        <h3>自主代理</h3>
-                        <p>内置工具集能够读写文件，执行命令，并在网络上搜索以完成复杂任务。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔌</div>
-                        <h3>IDE 集成</h3>
-                        <p>与 VS Code 等编辑器无缝协作，为代码修改提供可视化的差异对比。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 内容区域 -->
-        <div class="content-wrapper">
-            <article class="content">
-                <!-- Features -->
-                <section id="features" class="section">
-                    <h2>特性概览</h2>
-                    <p>Antigravity CLI 将 Antigravity 2.0 的核心能力直接带入您的终端。它针对键盘驱动的工作流和远程 SSH 会话进行了优化，资源开销极小。</p>
-
-                    <div class="highlight-box">
-                        <ul class="feature-list">
-                            <li><strong>主要关注点</strong>: 速度、键盘效率、低开销。</li>
-                            <li><strong>界面</strong>: 终端用户界面 (TUI)。</li>
-                            <li><strong>工作流</strong>: SSH/远程会话、键盘优先。</li>
-                            <li><strong>代理引擎</strong>: 与 Antigravity 2.0 共享核心代理引擎。</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Integration -->
-                <section id="integration" class="section">
-                    <h2>集成</h2>
-                    <div class="subsection">
-                        <h3>共享代理引擎</h3>
-                        <p>两个界面都运行在同一个核心代理引擎上。任何改进都会自动应用于两者。</p>
-                    </div>
-                    <div class="subsection">
-                        <h3>共享设置</h3>
-                        <p>首选项和权限双向同步。</p>
-                    </div>
-                    <div class="subsection">
-                        <h3>会话导出</h3>
-                        <p>将终端会话导出到 Antigravity 2.0 GUI 中继续工作。</p>
-                    </div>
-                </section>
-
-                <!-- Installation -->
-                <section id="installation" class="section">
-                    <h2>安装</h2>
-
-                    <div class="subsection">
-                        <h3>macOS / Linux</h3>
-                        <div class="code-block">
-                            <div class="code-header">
-                                <span class="code-title">Bash</span>
-                                <button class="copy-btn" onclick="copyCode(this)">复制</button>
-                            </div>
-                            <pre><code class="language-bash">curl -fsSL https://antigravity.google/cli/install.sh | bash</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <h3>Windows PowerShell</h3>
-                        <div class="code-block">
-                            <div class="code-header">
-                                <span class="code-title">PowerShell</span>
-                                <button class="copy-btn" onclick="copyCode(this)">复制</button>
-                            </div>
-                            <pre><code class="language-powershell">irm https://antigravity.google/cli/install.ps1 | iex</code></pre>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <h3>Windows CMD</h3>
-                        <div class="code-block">
-                            <div class="code-header">
-                                <span class="code-title">CMD</span>
-                                <button class="copy-btn" onclick="copyCode(this)">复制</button>
-                            </div>
-                            <pre><code class="language-cmd">curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd</code></pre>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Authentication -->
-                <section id="authentication" class="section">
-                    <h2>认证</h2>
-                    <p>CLI 通过系统密钥环进行认证，如果没有活动会话，则回退到 Google 登录。</p>
-
-                    <div class="interaction-modes">
-                        <div class="mode-card">
-                            <div class="mode-icon">🌐</div>
-                            <h4>本地</h4>
-                            <p>自动打开您的默认浏览器。</p>
-                        </div>
-
-                        <div class="mode-card">
-                            <div class="mode-icon">🖥️</div>
-                            <h4>远程 / SSH</h4>
-                            <p>检测 SSH 会话并打印授权 URL，以便在本地完成登录。</p>
-                        </div>
-
-                        <div class="mode-card">
-                            <div class="mode-icon">🚪</div>
-                            <h4>注销</h4>
-                            <p>运行 <code>/logout</code> 清除保存的凭据。</p>
-                        </div>
-                    </div>
-                    <div class="highlight-box">
-                        <p><strong>注意:</strong> 对于企业访问，在登录期间连接您的 GCP 项目。详情请见企业页面。</p>
-                    </div>
-                </section>
-
-                <!-- Terms -->
-                <section id="terms" class="section">
-                    <h2>服务条款与数据使用</h2>
-
-                    <div class="highlight-box" style="border-left-color: #ffcc00; background-color: rgba(255, 204, 0, 0.1);">
-                        <p><strong>警告:</strong> 已知 AI 编码代理存在某些安全风险，包括自主代码执行、数据泄露、提示词注入和供应链风险。请确保监控并验证代理采取的所有操作。</p>
-                    </div>
-
-                    <p>通过使用 Antigravity CLI，您同意受 Google 服务条款和 Google 隐私政策的约束，允许 Google 收集和使用您的交互数据以帮助改进产品。您可以随时通过设置选择退出。</p>
-
-                    <div class="subsection">
-                        <h3>法律与隐私链接</h3>
-                        <ul class="feature-list">
-                            <li><strong>服务条款</strong>: <a href="https://antigravity.google/terms">antigravity.google/terms</a></li>
-                            <li><strong>隐私政策</strong>: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a></li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Conclusion -->
-                <section class="conclusion">
-                    <div class="conclusion-content">
-                        <h2>准备好开始了吗？</h2>
-                        <p>您已经了解了 Antigravity CLI 的基础知识。将其应用到您的日常工作流中，探索将其与您的个人项目集成的无限可能性。祝您编码愉快！</p>
-                        <div class="conclusion-actions">
-                            <a href="#installation" class="btn btn-primary">开始学习</a>
-                            <a href="https://github.com/google-antigravity/antigravity-cli" class="btn btn-secondary"
-                                target="_blank">
-                                访问 GitHub
-                            </a>
-                        </div>
-                    </div>
-                </section>
-            </article>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">官方 README 中文化重构</p>
+        <h1 id="hero-title">把 Antigravity 2.0 的核心代理能力带到终端。</h1>
+        <p class="hero-lead">Antigravity CLI 能理解代码库、在获得许可后编辑文件，并直接从终端执行命令。它面向键盘优先、远程 SSH 与低资源开销的开发工作流。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#install">立即安装</a>
+          <a class="button secondary" href="https://github.com/google-antigravity/antigravity-cli" target="_blank" rel="noopener noreferrer">查看 GitHub</a>
         </div>
-    </main>
+      </div>
+      <div class="terminal-card" aria-label="Antigravity CLI 终端演示">
+        <div class="terminal-bar"><span></span><span></span><span></span><strong>antigravity</strong></div>
+        <pre><code><span class="prompt">$</span> antigravity
+理解代码库中…
+已准备好进行多步骤推理、文件编辑与工具调用。
 
-    <script src="script.js"></script>
+<span class="prompt">›</span> 修复测试并解释改动<span class="cursor"></span></code></pre>
+      </div>
+    </section>
+
+    <section class="quick-links" aria-label="官方资源">
+      <a href="https://antigravity.google/docs/cli-overview" target="_blank" rel="noopener noreferrer">官方文档</a>
+      <a href="https://antigravity.google/product/antigravity-cli" target="_blank" rel="noopener noreferrer">官方网站</a>
+      <a href="antigravity.md">中文 Markdown 摘要</a>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-heading">
+        <p class="eyebrow">Overview</p>
+        <h2>Antigravity CLI 是什么？</h2>
+      </div>
+      <div class="card-grid four">
+        <article class="card"><span>🧠</span><h3>多步骤推理</h3><p>把复杂开发任务拆解为连续步骤，保留上下文并持续推进。</p></article>
+        <article class="card"><span>📝</span><h3>多文件编辑</h3><p>在获得许可后跨文件修改代码，适合重构、修复与批量更新。</p></article>
+        <article class="card"><span>🛠️</span><h3>工具调用</h3><p>从终端读取项目、运行命令、验证结果，减少上下文切换。</p></article>
+        <article class="card"><span>📚</span><h3>持久历史</h3><p>延续会话记录，让长期项目协作更顺畅。</p></article>
+      </div>
+    </section>
+
+    <section class="section split" id="compare">
+      <div class="section-heading">
+        <p class="eyebrow">Features at a glance</p>
+        <h2>CLI 与 Antigravity 2.0 的定位差异</h2>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>维度</th><th>Antigravity CLI</th><th>Antigravity 2.0</th></tr></thead>
+          <tbody>
+            <tr><th>主要关注点</th><td>速度、键盘效率、低开销</td><td>全面性、可视化编排、项目管理</td></tr>
+            <tr><th>界面</th><td>终端用户界面（TUI）</td><td>完整富 GUI 应用</td></tr>
+            <tr><th>工作流</th><td>SSH/远程会话、键盘优先</td><td>本地工作区、重度编排</td></tr>
+            <tr><th>代理引擎</th><td>共享核心代理引擎</td><td>共享核心代理引擎</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="integration">
+      <div class="section-heading"><p class="eyebrow">Integration</p><h2>与 Antigravity 生态共享能力</h2></div>
+      <div class="card-grid three">
+        <article class="card"><span>🔁</span><h3>共享代理引擎</h3><p>CLI 与 GUI 运行在同一个核心代理引擎上，底层能力改进会自动惠及两端。</p></article>
+        <article class="card"><span>⚙️</span><h3>共享设置</h3><p>偏好设置和权限可以双向同步，减少重复配置。</p></article>
+        <article class="card"><span>📤</span><h3>会话导出</h3><p>可将终端会话导出到 Antigravity 2.0 GUI 中继续处理。</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <div class="section-heading"><p class="eyebrow">Installation</p><h2>按平台安装</h2></div>
+      <div class="install-grid">
+        <article class="code-card"><div><h3>macOS / Linux</h3><button data-copy>复制</button></div><pre><code>curl -fsSL https://antigravity.google/cli/install.sh | bash</code></pre></article>
+        <article class="code-card"><div><h3>Windows PowerShell</h3><button data-copy>复制</button></div><pre><code>irm https://antigravity.google/cli/install.ps1 | iex</code></pre></article>
+        <article class="code-card"><div><h3>Windows CMD</h3><button data-copy>复制</button></div><pre><code>curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd && install.cmd && del install.cmd</code></pre></article>
+      </div>
+    </section>
+
+    <section class="section" id="auth">
+      <div class="section-heading"><p class="eyebrow">Authentication</p><h2>登录、远程认证与注销</h2></div>
+      <div class="auth-panel">
+        <p>CLI 优先通过系统密钥环认证；如果没有活动会话，则回退到 Google Sign-In。</p>
+        <ul>
+          <li><strong>本地使用：</strong>自动打开默认浏览器完成登录。</li>
+          <li><strong>远程 / SSH：</strong>检测 SSH 会话并打印授权 URL，便于在本地浏览器完成登录。</li>
+          <li><strong>注销：</strong>运行 <code>/logout</code> 清除已保存凭据。</li>
+        </ul>
+        <p class="note">企业访问需要在引导流程中连接 GCP 项目，具体以企业页面说明为准。</p>
+      </div>
+    </section>
+
+    <section class="section warning" id="security">
+      <div class="section-heading"><p class="eyebrow">Terms & data use</p><h2>安全风险、服务条款与数据使用</h2></div>
+      <div class="warning-box">
+        <h3>使用 AI 编码代理时请保持审查</h3>
+        <p>AI 编码代理存在自主代码执行、数据泄露、提示词注入和供应链等风险。请监控并验证代理采取的所有操作。</p>
+      </div>
+      <p>使用 Antigravity CLI 即表示您同意根据 Google 服务条款和隐私政策，允许 Google 收集和使用交互数据以改进产品。您可以随时在设置中选择退出。</p>
+      <div class="legal-links">
+        <a href="https://antigravity.google/terms" target="_blank" rel="noopener noreferrer">服务条款</a>
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">隐私政策</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>基于 google-antigravity/antigravity-cli README 的中文静态指南。</p>
+    <a href="#top">回到顶部 ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
